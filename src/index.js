@@ -1,4 +1,3 @@
-/* @flow */
+import concat from './concat'
 
-/* eslint-disable no-console, no-undef */
-console.log('Hello world!')
+export {concat}

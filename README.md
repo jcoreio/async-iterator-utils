@@ -1,4 +1,4 @@
-# async-iterator-utils
+# @jcoreio/async-iterator-utils
 
 [![Build Status](https://travis-ci.org/jcoreio/async-iterator-utils.svg?branch=master)](https://travis-ci.org/jcoreio/async-iterator-utils)
 [![Coverage Status](https://codecov.io/gh/jcoreio/async-iterator-utils/branch/master/graph/badge.svg)](https://codecov.io/gh/jcoreio/async-iterator-utils)
@@ -10,6 +10,6 @@ utilities for working with ES7 async iterators
 ## Usage
 
 ```sh
-npm install --save async-iterator-utils
+npm install --save @jcoreio/async-iterator-utils
 ```
 
