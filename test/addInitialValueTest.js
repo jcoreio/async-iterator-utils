@@ -4,9 +4,9 @@ import {describe, it} from 'mocha'
 import {expect} from 'chai'
 import {$$asyncIterator} from 'iterall'
 
-import {concat} from '../src'
+import {addInitialValue} from '../src'
 
-describe('concat', () => {
+describe('addInitialValue', () => {
   it('works', async () => {
     async function * range(begin: number, end: number): AsyncIterator<number> {
       for (let i = begin; i < end; i++) {
@@ -14,9 +14,9 @@ describe('concat', () => {
       }
     }
 
-    const concatenated = concat(
-      {[$$asyncIterator]: () => range(0, 3)},
-      {[$$asyncIterator]: () => range(3, 6)},
+    const concatenated = addInitialValue(
+      0,
+      {[$$asyncIterator]: () => range(1, 6)},
     )
 
     const result = []
