@@ -7,9 +7,36 @@
 
 utilities for working with ES7 async iterators
 
-## Usage
+# Installation
 
 ```sh
 npm install --save @jcoreio/async-iterator-utils
 ```
 
+# Usage
+
+## `addInitialValue`
+
+```js
+addInitialValue<T>(initialValue: T, iterable: AsyncIterable<T>): AsyncIterable<T>
+```
+
+Creates an `AsyncIterable` that yields `initialValue` followed by every value
+in `iterable`.  Useful for yielding an initial value in GraphQL subscriptions.
+
+## `concat`
+
+```js
+concat<T>(...iterables: Array<AsyncIterable<T>>): AsyncIterable<T>
+```
+
+Concatenates the results of the given `iterables` into a single `AsyncIterable`.
+
+## `filter`
+
+```js
+filter<T>(iterable: AsyncIterable<T>, predicate: (T) => any): AsyncIterable<T>
+```
+
+Creates an `AsyncIterable` that only yields values from `iterable` for which
+`predicate` returns/resolves to a truthy value.
