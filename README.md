@@ -58,3 +58,11 @@ are emitted by `eventEmitter`.
 If you call its `Symbol.asyncIterator` method, be sure to eventually call `return`
 or `throw` on the returned `AsyncIterator`, or you will leave dangling event listeners.
 
+## `PushableAsyncIterator<T>`
+
+An `AsyncIterator` class with an additional method:
+
+### `pushValue(value: T)`
+
+Enqueues `value`; the next call to `next()` will resolve to this `value`.
+
