@@ -2,7 +2,6 @@
 
 import {describe, it} from 'mocha'
 import {expect} from 'chai'
-import {$$asyncIterator} from 'iterall'
 
 import {addInitialValue} from '../src'
 
@@ -16,7 +15,7 @@ describe('addInitialValue', () => {
 
     const concatenated = addInitialValue(
       0,
-      {[$$asyncIterator]: () => range(1, 6)},
+      {[Symbol.asyncIterator]: () => range(1, 6)},
     )
 
     const result = []

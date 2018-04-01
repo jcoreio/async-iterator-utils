@@ -1,7 +1,5 @@
 // @flow
 
-import {$$asyncIterator} from 'iterall'
-
 export default function concat<T>(...iterables: Array<AsyncIterable<T>>): AsyncIterable<T> {
   async function * concatAsyncIterator(): AsyncIterator<T> {
     for (let iterable of iterables) {
@@ -12,6 +10,6 @@ export default function concat<T>(...iterables: Array<AsyncIterable<T>>): AsyncI
   }
 
   return ({
-    [$$asyncIterator]: concatAsyncIterator,
+    [Symbol.asyncIterator]: concatAsyncIterator,
   }: any)
 }

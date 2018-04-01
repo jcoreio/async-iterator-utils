@@ -1,7 +1,5 @@
 // @flow
 
-import {$$asyncIterator} from 'iterall'
-
 export default function addInitialValue<T>(initialValue: T, iterable: AsyncIterable<T>): AsyncIterable<T> {
   async function * addInitialValueAsyncIterator(): AsyncIterator<T> {
     yield initialValue
@@ -11,7 +9,7 @@ export default function addInitialValue<T>(initialValue: T, iterable: AsyncItera
   }
 
   return ({
-    [$$asyncIterator]: addInitialValueAsyncIterator
+    [Symbol.asyncIterator]: addInitialValueAsyncIterator
   }: any)
 }
 

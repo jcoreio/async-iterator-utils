@@ -2,7 +2,6 @@
 
 import {describe, it} from 'mocha'
 import {expect} from 'chai'
-import {$$asyncIterator} from 'iterall'
 
 import {filter} from '../src'
 
@@ -15,7 +14,7 @@ describe('filter', () => {
     }
 
     const filtered = filter(
-      {[$$asyncIterator]: () => range(0, 6)},
+      {[Symbol.asyncIterator]: () => range(0, 6)},
       (x: number) => x % 2
     )
 
@@ -33,7 +32,7 @@ describe('filter', () => {
     }
 
     const filtered = filter(
-      {[$$asyncIterator]: () => range(0, 6)},
+      {[Symbol.asyncIterator]: () => range(0, 6)},
       (x: number) => Promise.resolve(x % 2)
     )
 
