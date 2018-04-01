@@ -9,6 +9,7 @@ export default function addInitialValue<T>(initialValue: T, iterable: AsyncItera
   }
 
   return ({
+    // $FlowFixMe
     [Symbol.asyncIterator]: addInitialValueAsyncIterator
   }: any)
 }

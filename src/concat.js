@@ -10,6 +10,7 @@ export default function concat<T>(...iterables: Array<AsyncIterable<T>>): AsyncI
   }
 
   return ({
+    // $FlowFixMe
     [Symbol.asyncIterator]: concatAsyncIterator,
   }: any)
 }

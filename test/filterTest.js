@@ -14,6 +14,7 @@ describe('filter', () => {
     }
 
     const filtered = filter(
+      // $FlowFixMe
       {[Symbol.asyncIterator]: () => range(0, 6)},
       (x: number) => x % 2
     )
@@ -32,6 +33,7 @@ describe('filter', () => {
     }
 
     const filtered = filter(
+      // $FlowFixMe
       {[Symbol.asyncIterator]: () => range(0, 6)},
       (x: number) => Promise.resolve(x % 2)
     )

@@ -8,6 +8,7 @@ export default function filter<T>(iterable: AsyncIterable<T>, predicate: (T) => 
   }
 
   return ({
+    // $FlowFixMe
     [Symbol.asyncIterator]: filterAsyncIterator,
   }: any)
 }

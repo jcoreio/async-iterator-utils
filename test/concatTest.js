@@ -14,7 +14,9 @@ describe('concat', () => {
     }
 
     const concatenated = concat(
+      // $FlowFixMe
       {[Symbol.asyncIterator]: () => range(0, 3)},
+      // $FlowFixMe
       {[Symbol.asyncIterator]: () => range(3, 6)},
     )
 

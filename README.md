@@ -40,3 +40,21 @@ filter<T>(iterable: AsyncIterable<T>, predicate: (T) => any): AsyncIterable<T>
 
 Creates an `AsyncIterable` that only yields values from `iterable` for which
 `predicate` returns/resolves to a truthy value.
+
+## `eventEmitterAsyncIterable`
+
+Adapted from `graphql-subscriptions`' `eventEmitterAsyncIterator`, but done properly
+(it can't leave dangling listeners when used properly)
+
+```js
+eventEmitterAsyncIteratable<T>(
+  eventEmitter: EventEmitter,
+  eventsNames: string | string[]
+): AsyncIterable<T>
+```
+
+Creates an `AsyncIterable` that yields all events with the given `eventsNames` that
+are emitted by `eventEmitter`.
+If you call its `Symbol.asyncIterator` method, be sure to eventually call `return`
+or `throw` on the returned `AsyncIterator`, or you will leave dangling event listeners.
+

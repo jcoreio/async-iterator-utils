@@ -15,6 +15,7 @@ describe('addInitialValue', () => {
 
     const concatenated = addInitialValue(
       0,
+      // $FlowFixMe
       {[Symbol.asyncIterator]: () => range(1, 6)},
     )
 
